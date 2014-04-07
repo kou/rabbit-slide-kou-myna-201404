@@ -13,6 +13,11 @@
 : theme
    .
 
+= 話すこと
+
+  * @yoku0825さんおめでとう！
+  * MariaDBとMroongaのこと
+
 = OSC 2011.DB\n(2011/11/05)
 
 = MariaDBバンドル予定！
@@ -46,5 +51,5 @@ Mroongaを\n
 
 = 参考2
 
-  * buildbot:\n
+  * buildbot\n
     (('note:https://buildbot.askmonty.org/buildbot/grid?branch=10.0-mroonga'))
