@@ -1,0 +1,24 @@
+---
+id: myna-201404
+base_name: mroonga-not-bundled-in-mariadb
+tags:
+- rabbit
+- mroonga
+- mariadb
+- myna
+presentation_date: 2014-04-14
+version: 2014.4.14.0
+licenses:
+- CC BY-SA 3.0
+slideshare_id: 
+speaker_deck_id: 
+ustream_id: 
+vimeo_id: 
+youtube_id: 
+author:
+  markup_language: :rd
+  name: Kouhei Sutou
+  email: kou@clear-code.com
+  rubygems_user: kou
+  slideshare_user: kou
+  speaker_deck_user: kou
