@@ -18,6 +18,20 @@
   * @yoku0825さんおめでとう！
   * MariaDBとMroongaのこと
 
+= MariaDBとMroongaの現状1
+
+  * MariaDB 10.0.10: 2014-03-31
+  * Mroonga 4.0.1: 2014-03-29
+    * ↑の組み合わせでビルドできない
+    * 10.0.9からAPIが変わった…
+
+= MariaDBとMroongaの現状2
+
+  * MariaDB 10.0.10: 2014-03-31
+  * Mroonga master
+    * ↑の組み合わせでビルドできる
+    * API変更に対応
+
 = OSC 2011.DB\n(2011/11/05)
 
 = MariaDBバンドル予定！
@@ -26,19 +40,72 @@
 
 = Mroongaは\n本当に\nバンドル\nされるの？
 
-= MariaDB 10.09に\nバンドル\nするよ！
+= MariaDB 10.0.9に\nバンドル\nするよ！
 
-= MariaDB 10.10リリース！\n(GA)\n(2014/03/31)
+= MariaDB 10.0.10\nリリース！\n(GA)\n(2014/03/31)
 
-= MariaDB 10.10
+= MariaDB 10.0.10
 
 Mroongaを\n
 バンドルして\n
 いない
 
+= バンドルに必要なこと
+
+  * MariaDBのソースツリーへ統合
+    * ビルドシステムに組み込む\n
+      (('note:storage/以下にぶち込んでビルドできるようにする'))
+  * 各種環境でテストが通ること
+    * MariaDBはbuildbotを使っている
+    * 古い環境とかWindowsとかもある
+
+= 終わった作業
+
+  * ソースツリーへ統合
+    * CMake対応
+    * Groongaバンドル版Mroongaの作成
+    * MariaDBの\n
+      ビルドシステムの作法に対応
+
+= ビルドシステムの作法
+
+(('tag:center'))↓が動くようにする
+
+  if(WITH_MROONGA_STORAGE_ENGINE)
+    MYSQL_ADD_PLUGIN(mroonga ...)
+  endif()
+
 = 残作業
 
-  * ...
+  * 各種環境でテストが通ること
+    * OK: 新しめのGNU/Linux
+    * OK: Windows(('note:（ビルドテストのみ）'))
+    * NG: 古い環境(('note:（もう解決したかも）'))
+    * NG: 夏時間中の環境
+    * NG: プラグインが消せない(('note:（なぜ？）'))
+
+= バンドル希望の理由
+
+  * Windowsのパッケージを\n
+    自分たちで作りたくなかった
+    * 自動化できない
+    * 環境がない
+    * = メンテナンスコスト高い
+
+= バンドル対応
+
+コスト高い\n
+(('note:（あれ…？）'))
+
+= まとめ
+
+  * MariaDB 10.0.10
+    * Mroongaをバンドルしていない
+    * Mroonga 4.0.1を使えない
+    * Mroonga masterは使える
+  * バンドル
+    * 各種環境への対応が大変
+    * 手伝いたい人いません？
 
 = 参考1
 
